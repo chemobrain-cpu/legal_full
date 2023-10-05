@@ -4,7 +4,7 @@ const app = express()
 const ejs = require("ejs")
 const bodyParser = require("body-parser")
 const mongoose = require("mongoose");
-const { Case, Attorney } = require("../database/databaseConfig")
+const { Case, Attorney,Blog } = require("../database/databaseConfig")
 const random_number = require("random-number")
 
 
@@ -51,12 +51,10 @@ module.exports.getSingleAttorney_1 = async (req, res) => {
       let attorneyId = req.params.id
 
       let attorney = await Attorney.findOne({_id:attorneyId})
-      console.log(attorney)
 
       return res.status(200).render('Group1/attorneys/singleAttorney',{attorney:attorney})
 
    } catch (error) {
-      console.log(error)
       error.message = error.message || "an error occured try later"
 
       return next(error)
@@ -159,7 +157,6 @@ module.exports.post_case_1 = async (req, res) => {
 
 module.exports.track_case_1 = async (req, res) => {
    //logic to retrieve case from the backend
-
    return res.status(200).render('Group1/page/track')
 
 }
@@ -227,19 +224,30 @@ module.exports.create_case_1 = async (req, res) => {
 
 
 
+module.exports.blog_1 = async (req, res, next) => {
+   try {
+      //get all attorneys
+      let blog = await Blog.findOne({_id:req.params.id})
+      return res.status(200).render('Group1/blog/blog',{blog:blog})
 
-
-
-module.exports.blog_1 = async (req, res) => {
-   //logic to retrieve case from the backend
-
-   return res.status(200).render('Group1/blog/blog')
+   } catch (error) {
+      error.message = error.message || "an error occured try later"
+      return next(error)
+   }
 
 }
+
 module.exports.blogs_1 = async (req, res) => {
    //logic to retrieve case from the backend
+   try {
+      //get all attorneys
+      let blogs = await Blog.find()
+      return res.status(200).render('Group1/blog/blogs',{blogs:blogs})
 
-   return res.status(200).render('Group1/blog/blogs')
+   } catch (error) {
+      error.message = error.message || "an error occured try later"
+      return next(error)
+   }
 
 }
 
@@ -247,15 +255,15 @@ module.exports.case_1 = async (req, res) => {
    return res.status(200).render('Group1/case/case')
 
 }
+
 module.exports.cases_1 = async (req, res) => {
    return res.status(200).render('Group1/case/cases')
 
 }
 
-
 // group_2 controllers
 module.exports.gethome_2 = async (req, res) => {
-   console.log('reacheddd')
+   
    res.status(200).render('Group2/page/home')
 }
 
@@ -332,18 +340,6 @@ module.exports.practise_area_2 = async (req, res) => {
 
 
 
-module.exports.blog_2 = async (req, res) => {
-   //logic to retrieve case from the backend
-
-   return res.status(200).render('Group2/blog/blog')
-
-}
-module.exports.blogs_2 = async (req, res) => {
-   //logic to retrieve case from the backend
-
-   return res.status(200).render('Group2/blog/blogs')
-
-}
 
 
 
@@ -415,12 +411,7 @@ module.exports.practise_area_3 = async (req, res) => {
 
 
 
-module.exports.blog_3 = async (req, res) => {
-   //logic to retrieve case from the backend
 
-   return res.status(200).render('Group3/blog/blog')
-
-}
 
 
 

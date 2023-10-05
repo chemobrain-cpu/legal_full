@@ -271,7 +271,7 @@ router.get('/business-law_1', business_law_1)
 router.get('/elder-law_1', elder_law_1)
 router.get('/practise_area_1', practise_area_1)
 //--blogs
-router.get('/blog_1', blog_1)
+router.get('/blog_1/:id', blog_1)
 router.get('/blogs_1', blogs_1)
 //--cases
 router.get('/case_1', case_1)
@@ -336,8 +336,8 @@ router.get('/practise_area_2', practise_area_2)
 
 
 //--blogs
-router.get('/blog_2', blog_2)
-router.get('/blogs_2', blogs_2)
+router.get('/blog_2', blog_1)
+router.get('/blogs_2', blogs_1)
 
 
 

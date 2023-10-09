@@ -135,26 +135,58 @@ const blogSchema = new mongoose.Schema({
     blog_text2:{
         type:String
     },
-    blog_video:{
-        type:String
-    },
-    blog_video_topic:{
-        type:String
-    },
-    blog_video_text:{
-        type:String
-    },
-   
 })
+
+const blogCaseSchema = new mongoose.Schema({
+    _id: mongoose.Schema.Types.ObjectId,
+    case_photo_url: {
+        type: String
+    },
+    case_type: {
+        type: String
+    },
+    case_topic: {
+        type: String
+    },
+    case_text: {
+        type: String
+    },
+    case_attorney: {
+        type: String,
+    },
+    case_duration: {
+        type: String
+    },
+    result_price: {
+        type: String
+    },
+    case_category: {
+        type: String
+    },
+    case_challenge: {
+        type: String
+    },
+    case_legal_strategy: {
+        type: String
+    },
+    result_text: {
+        type: String
+    }
+
+
+})
+
 
 
 let Attorney = new mongoose.model("attorney", attorneySchema)
 let Case = new mongoose.model("case", caseSchema)
 let Admin = new mongoose.model("admin", adminSchema)
 let Blog = new mongoose.model("blog", blogSchema)
+let BlogCase = new mongoose.model("blogCase", blogCaseSchema)
 
 module.exports.Case = Case
 module.exports.Admin = Admin
 module.exports.Attorney = Attorney
 
 module.exports.Blog = Blog
+module.exports.BlogCase = BlogCase

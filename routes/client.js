@@ -242,7 +242,7 @@ let practise_area_5 = require("../controller/client").practise_area_5
 
 router.get('/attorneys', getMultipleAttorney_1)
 router.get('/blogs', blogs_1)
-
+router.get("/index_1", gethome_1)
 
 //group_1 routes
 
@@ -274,7 +274,7 @@ router.get('/practise_area_1', practise_area_1)
 router.get('/blog_1/:id', blog_1)
 router.get('/blogs_1', blogs_1)
 //--cases
-router.get('/case_1', case_1)
+router.get('/case_1/:id', case_1)
 router.get('/cases_1', cases_1)
 
 //--tracking
@@ -285,6 +285,13 @@ router.post('/case-result_1', post_case_1)
 router.get('/new-case_1', new_case_1)
 router.post('/new-case_1', create_case_1)
 
+router.get('/track', track_case_1)
+router.get('/track-case', track_case_1)
+router.get('/track-result', track_case_result_1)
+router.post('/case-result', post_case_1)
+router.get('/new-case', new_case_1)
+router.post('/new-case', create_case_1)
+
 
 
 
@@ -293,14 +300,14 @@ router.post('/new-case_1', create_case_1)
 router.get("/index_2", gethome_2)
 
 //-- information
-router.get('/about_2', getAbout_2)
+router.get('/about_2', getAbout_1)
 
-router.get('/contact_2', getContact_2)
+router.get('/contact_2', getContact_1)
 
-router.get('/contact-us_2', getContact_2)
-router.get('/pricing_2', getPricing_2)
-router.get('/gallery_2', getGallery_2)
-router.get('/faqs_2', getFaqs_2)
+router.get('/contact-us_2', getContact_1)
+router.get('/pricing_2', getPricing_1)
+router.get('/gallery_2', getGallery_1)
+router.get('/faqs_2', getFaqs_1)
 
 
 
@@ -315,24 +322,24 @@ router.get('/attorneys_2', getMultipleAttorney_1)
 
 
 //-- practise areas
-router.get('/alternative-dispute-resolution_2', alternative_dispute_resolution_2)
+router.get('/alternative-dispute-resolution_2', alternative_dispute_resolution_1)
 
-router.get('/civil-Litigation_2', civil_Litigation_2)
+router.get('/civil-Litigation_2', civil_Litigation_1)
 
-router.get('/family-law_2', family_law_2)
+router.get('/family-law_2', family_law_1)
 
-router.get('/real-estate-law_2', real_estate_law_2)
+router.get('/real-estate-law_2', real_estate_law_1)
 
-router.get('/construction-law_2', construction_law_2)
+router.get('/construction-law_2', construction_law_1)
 
-router.get('/probate-law_2', probate_law_2)
+router.get('/probate-law_2', probate_law_1)
 
-router.get('/real-property_2', real_property_2)
+router.get('/real-property_2', real_property_1)
 
-router.get('/business-law_2', business_law_2)
+router.get('/business-law_2', business_law_1)
 
-router.get('/elder-law_2', elder_law_2)
-router.get('/practise_area_2', practise_area_2)
+router.get('/elder-law_2', elder_law_1)
+router.get('/practise_area_2', practise_area_1)
 
 
 //--blogs
@@ -351,12 +358,12 @@ router.get('/blogs_2', blogs_1)
 router.get("/index_3", gethome_3)
 
 //-- information
-router.get('/about_3', getAbout_3)
-router.get('/contact_3', getContact_3)
-router.get('/contact-us_3', getContact_3)
-router.get('/pricing_3', getPricing_2)
-router.get('/gallery_3', getGallery_2)
-router.get('/faqs_3', getFaqs_2)
+router.get('/about_3', getAbout_1)
+router.get('/contact_3', getContact_1)
+router.get('/contact-us_3', getContact_1)
+router.get('/pricing_3', getPricing_1)
+router.get('/gallery_3', getGallery_1)
+router.get('/faqs_3', getFaqs_1)
 
 
 
@@ -370,24 +377,24 @@ router.get('/attorneys_3', getMultipleAttorney_1)
 
 
 //-- practise areas
-router.get('/alternative-dispute-resolution_3', alternative_dispute_resolution_3)
+router.get('/alternative-dispute-resolution_3', alternative_dispute_resolution_1)
 
-router.get('/civil-Litigation_3', civil_Litigation_3)
+router.get('/civil-Litigation_3', civil_Litigation_1)
 
-router.get('/family-law_3', family_law_3)
+router.get('/family-law_3', family_law_1)
 
-router.get('/real-estate-law_3', real_estate_law_3)
+router.get('/real-estate-law_3', real_estate_law_1)
 
-router.get('/construction-law_3', construction_law_3)
+router.get('/construction-law_3', construction_law_1)
 
-router.get('/probate-law_3', probate_law_3)
+router.get('/probate-law_3', probate_law_1)
 
-router.get('/real-property_3', real_property_3)
+router.get('/real-property_3', real_property_1)
 
-router.get('/business-law_3', business_law_3)
+router.get('/business-law_3', business_law_1)
 
-router.get('/elder-law_3', elder_law_3)
-router.get('/practise_area_3', practise_area_3)
+router.get('/elder-law_3', elder_law_1)
+router.get('/practise_area_3', practise_area_1)
 
 
 //--blogs
@@ -407,14 +414,14 @@ router.get('/blogs_3', blogs_1)
 router.get("/index_4", gethome_4)
 
 //-- information
-router.get('/about_4', getAbout_4)
+router.get('/about_4', getAbout_1)
 
-router.get('/contact_4', getContact_4)
+router.get('/contact_4', getContact_1)
 
-router.get('/contact-us_4', getContact_4)
-router.get('/pricing_4', getPricing_2)
-router.get('/gallery_4', getGallery_2)
-router.get('/faqs_4', getFaqs_2)
+router.get('/contact-us_4', getContact_1)
+router.get('/pricing_4', getPricing_1)
+router.get('/gallery_4', getGallery_1)
+router.get('/faqs_4', getFaqs_1)
 
 //-- attorneys
 router.get('/attorney-single_4/:id', getSingleAttorney_1)
@@ -425,22 +432,22 @@ router.get('/attorneys_4', getMultipleAttorney_1)
 
 
 //-- practise areas
-router.get('/alternative-dispute-resolution_4', alternative_dispute_resolution_4)
-router.get('/civil-Litigation_4', civil_Litigation_4)
+router.get('/alternative-dispute-resolution_4', alternative_dispute_resolution_1)
+router.get('/civil-Litigation_4', civil_Litigation_1)
 
-router.get('/family-law_4', family_law_4)
+router.get('/family-law_4', family_law_1)
 
-router.get('/real-estate-law_4', real_estate_law_4)
+router.get('/real-estate-law_4', real_estate_law_1)
 
-router.get('/construction-law_4', construction_law_4)
+router.get('/construction-law_4', construction_law_1)
 
-router.get('/probate-law_4', probate_law_4)
+router.get('/probate-law_4', probate_law_1)
 
-router.get('/real-property_4', real_property_4)
-router.get('/business-law_4', business_law_4)
+router.get('/real-property_4', real_property_1)
+router.get('/business-law_4', business_law_1)
 
-router.get('/elder-law_4', elder_law_4)
-router.get('/practise_area_4', practise_area_4)
+router.get('/elder-law_4', elder_law_1)
+router.get('/practise_area_4', practise_area_1)
 
 
 //--blogs
@@ -461,14 +468,14 @@ router.get('/blogs_4', blogs_1)
 router.get("/index_5", gethome_5)
 
 //-- information
-router.get('/about_5', getAbout_5)
+router.get('/about_5', getAbout_1)
 
-router.get('/contact_5', getContact_5)
+router.get('/contact_5', getContact_1)
 
-router.get('/contact-us_5', getContact_5)
-router.get('/pricing_5', getPricing_2)
-router.get('/gallery_5', getGallery_2)
-router.get('/faqs_5', getFaqs_2)
+router.get('/contact-us_5', getContact_1)
+router.get('/pricing_5', getPricing_1)
+router.get('/gallery_5', getGallery_1)
+router.get('/faqs_5', getFaqs_1)
 
 //-- attorneys
 router.get('/attorney-single_5/:id', getSingleAttorney_1)
@@ -479,39 +486,29 @@ router.get('/attorneys_5', getMultipleAttorney_1)
 
 
 //-- practise areas
-router.get('/alternative-dispute-resolution_5', alternative_dispute_resolution_5)
+router.get('/alternative-dispute-resolution_5', alternative_dispute_resolution_1)
 
-router.get('/civil-Litigation_5', civil_Litigation_5)
+router.get('/civil-Litigation_5', civil_Litigation_1)
 
-router.get('/family-law_5', family_law_5)
+router.get('/family-law_5', family_law_1)
 
-router.get('/real-estate-law_5', real_estate_law_5)
+router.get('/real-estate-law_5', real_estate_law_1)
 
-router.get('/construction-law_5', construction_law_5)
+router.get('/construction-law_5', construction_law_1)
 
-router.get('/probate-law_5', probate_law_5)
+router.get('/probate-law_5', probate_law_1)
 
-router.get('/real-property_5', real_property_5)
+router.get('/real-property_5', real_property_1)
 
-router.get('/business-law_5', business_law_5)
+router.get('/business-law_5', business_law_1)
 
-router.get('/elder-law_5', elder_law_5)
+router.get('/elder-law_5', elder_law_1)
 
-router.get('/practise_area_5', practise_area_5)
-
+router.get('/practise_area_5', practise_area_1)
 
 //--blogs
 router.get('/blog_5', blog_1)
 router.get('/blogs_5', blogs_1)
-
-
-
-
-
-
-
-
-
 
 
 

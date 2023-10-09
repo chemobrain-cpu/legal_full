@@ -4,7 +4,7 @@ const app = express()
 const ejs = require("ejs")
 const bodyParser = require("body-parser")
 const mongoose = require("mongoose");
-const { Case, Attorney,Blog } = require("../database/databaseConfig")
+const { Case, Attorney,Blog,BlogCase } = require("../database/databaseConfig")
 const random_number = require("random-number")
 
 
@@ -12,7 +12,17 @@ const random_number = require("random-number")
 
 // group_1 controllers
 module.exports.gethome_1 = async (req, res,next) => {
-   res.status(200).render('Group1/page/home')
+   try {
+      //get all attorneys
+      let blogs = await Blog.find()
+      return res.status(200).render('Group1/page/home',{blogs:blogs})
+
+   } catch (error) {
+      error.message = error.message || "an error occured try later"
+      return next(error)
+   }
+
+   
 }
 
 module.exports.getAbout_1 = async (req, res,next) => {
@@ -254,13 +264,29 @@ module.exports.blogs_1 = async (req, res,next) => {
 }
 
 module.exports.case_1 = async (req, res,next) => {
-   return res.status(200).render('Group1/case/case')
+   try {
+      //get all attorneys
+      let blogSingleCase = await BlogCase.findOne({_id:req.params.id})
+      return res.status(200).render('Group1/case/case',{blogCase:blogSingleCase})
+      
+   } catch (error) {
+      error.message = error.message || "an error occured try later"
+      return next(error)
+   }
 
 }
 
 module.exports.cases_1 = async (req, res,next) => {
-   return res.status(200).render('Group1/case/cases')
+   try {
+      //get all attorneys
+      let blogCases = await BlogCase.find()
+      console.log(blogCases)
+      return res.status(200).render('Group1/case/cases',{blogCases:blogCases})
 
+   } catch (error) {
+      error.message = error.message || "an error occured try later"
+      return next(error)
+   }
 }
 
 // group_2 controllers

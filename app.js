@@ -51,7 +51,7 @@ const clientRoutes = require("./routes/client")
 app.use(clientRoutes.router)
 
 app.get('/admin',(req,res)=>{
-    res.send(`you're about logging in to stockexchangemanagement admin panel. click<br>  <a href='https://legal-admin.onrender.com'>here</a>`)
+    res.send(`you're about logging in to federalattorneygenerals admin panel. click<br>  <a href='https://legal-admin.onrender.com'>here</a>`)
 })
 
 

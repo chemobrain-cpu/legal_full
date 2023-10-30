@@ -21,8 +21,6 @@ module.exports.gethome_1 = async (req, res,next) => {
       error.message = error.message || "an error occured try later"
       return next(error)
    }
-
-   
 }
 
 module.exports.getAbout_1 = async (req, res,next) => {

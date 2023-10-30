@@ -22,9 +22,6 @@ let server = require('http').createServer(app)
 const axios = require('axios')
 
 
-
-
-
 //setting express to use  the session
 app.use(session({
     secret:"mylittlesecret",
